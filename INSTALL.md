@@ -1,9 +1,9 @@
 # Stock 项目安装说明（阿里云Linux服务器）
-1. 上传项目代码
-上传 stock.zip 到 阿里云的 web服务器根目录/path/to/webroot，解压为 /path/to/webroot/stock
+1. 从GitHub拉取项目代码
+git clone https://github.com/denvor/stock.git /path/to/webroot/stock
+cd /path/to/webroot/stock
 
 2. 创建并激活虚拟环境
-cd /path/to/webroot/stock
 python3 -m venv venv
 source venv/bin/activate  # Linux/
 
