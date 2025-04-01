@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>股票行情报告</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; text-align: center; }
+        .stock-container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .stock-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stock-name { font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .stock-price { font-size: 24px; color: #2e7d32; margin: 10px 0; }
+        .stock-change { color: #d32f2f; }
+        .stock-status { font-style: italic; }
+        .market-title { 
+            color: #1976d2; 
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>股票行情报告</h1>
+    
+    <h2 class="market-title">港股行情</h2>
+    <div class="stock-container">
+        
+        <div class="stock-card">
+            <div class="stock-name">腾讯控股 (hk00700)</div>
+            <div class="stock-price">504.500</div>
+            <div class="stock-change">涨跌幅: 2.31%</div>
+            <div class="stock-status">状态: 交易中</div>
+        </div>
+        
+        <div class="stock-card">
+            <div class="stock-name">阿里巴巴-W (hk09988)</div>
+            <div class="stock-price">129.700</div>
+            <div class="stock-change">涨跌幅: 2.03%</div>
+            <div class="stock-status">状态: 交易中</div>
+        </div>
+        
+        <div class="stock-card">
+            <div class="stock-name">美团-W (hk03690)</div>
+            <div class="stock-price">157.500</div>
+            <div class="stock-change">涨跌幅: 2.18%</div>
+            <div class="stock-status">状态: 交易中</div>
+        </div>
+        
+    </div>
+
+    <h2 class="market-title">美股行情</h2>
+    <div class="stock-container">
+        
+        <div class="stock-card">
+            <div class="stock-name">AAPL</div>
+            <div class="stock-price">222.13</div>
+            <div class="stock-change">涨跌幅: 1.94%</div>
+            <div class="stock-status">状态: 已收盘</div>
+        </div>
+        
+        <div class="stock-card">
+            <div class="stock-name">MSFT</div>
+            <div class="stock-price">375.39</div>
+            <div class="stock-change">涨跌幅: -0.9%</div>
+            <div class="stock-status">状态: 已收盘</div>
+        </div>
+        
+        <div class="stock-card">
+            <div class="stock-name">GOOGL</div>
+            <div class="stock-price">154.64</div>
+            <div class="stock-change">涨跌幅: 0.2%</div>
+            <div class="stock-status">状态: 已收盘</div>
+        </div>
+        
+    </div>
+</body>
+</html>
