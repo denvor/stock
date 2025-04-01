@@ -19,37 +19,70 @@
         .stock-status { font-style: italic; }
         .market-title { 
             color: #1976d2; 
-            border-bottom: 2px solid #1976d2;   
+            border-bottom: 2px solid #1976d2;
             padding-bottom: 5px;
             margin-top: 30px;
+        }
+        .stock-position {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .portfolio-summary {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
     <h1>股票行情报告</h1>
     
+    <div class="portfolio-summary">
+        <h3>投资组合总价值: 149034.15</h3>
+        <p>港股总持仓: 100495.00 (67.4%)</p>
+        <p>美股总持仓: 48539.15 (32.6%)</p>
+    </div>
+
     <h2 class="market-title">港股行情</h2>
     <div class="stock-container">
         
         <div class="stock-card">
             <div class="stock-name">腾讯控股 (hk00700)</div>
-            <div class="stock-price">504.500</div>
-            <div class="stock-change">涨跌幅: 501.000%</div>
-            <div class="stock-status">状态: 交易中</div>
+            <div class="stock-price">506.000</div>
+            <div class="stock-change">涨跌幅: 2.31%</div>
+            <div class="stock-position">
+                <div>持股数量: 100</div>
+                <div>持仓金额: 50600.00</div>
+                <div>持仓占比: 34.0%</div>
+            </div>
+            <div class="stock-status">状态: 已收盘</div>
         </div>
         
         <div class="stock-card">
             <div class="stock-name">阿里巴巴-W (hk09988)</div>
-            <div class="stock-price">129.400</div>
-            <div class="stock-change">涨跌幅: 129.100%</div>
-            <div class="stock-status">状态: 交易中</div>
+            <div class="stock-price">130.300</div>
+            <div class="stock-change">涨跌幅: 2.03%</div>
+            <div class="stock-position">
+                <div>持股数量: 200</div>
+                <div>持仓金额: 26060.00</div>
+                <div>持仓占比: 17.5%</div>
+            </div>
+            <div class="stock-status">状态: 已收盘</div>
         </div>
         
         <div class="stock-card">
             <div class="stock-name">美团-W (hk03690)</div>
-            <div class="stock-price">158.000</div>
-            <div class="stock-change">涨跌幅: 157.700%</div>
-            <div class="stock-status">状态: 交易中</div>
+            <div class="stock-price">158.900</div>
+            <div class="stock-change">涨跌幅: 2.18%</div>
+            <div class="stock-position">
+                <div>持股数量: 150</div>
+                <div>持仓金额: 23835.00</div>
+                <div>持仓占比: 16.0%</div>
+            </div>
+            <div class="stock-status">状态: 已收盘</div>
         </div>
         
     </div>
@@ -60,21 +93,36 @@
         <div class="stock-card">
             <div class="stock-name">AAPL</div>
             <div class="stock-price">222.13</div>
-            <div class="stock-change">涨跌幅: 4.23%</div>
+            <div class="stock-change">涨跌幅: 1.94%</div>
+            <div class="stock-position">
+                <div>持股数量: 50</div>
+                <div>持仓金额: 11106.50</div>
+                <div>持仓占比: 7.5%</div>
+            </div>
             <div class="stock-status">状态: 已收盘</div>
         </div>
         
         <div class="stock-card">
             <div class="stock-name">MSFT</div>
             <div class="stock-price">375.39</div>
-            <div class="stock-change">涨跌幅: -3.41%</div>
+            <div class="stock-change">涨跌幅: -0.9%</div>
+            <div class="stock-position">
+                <div>持股数量: 75</div>
+                <div>持仓金额: 28154.25</div>
+                <div>持仓占比: 18.9%</div>
+            </div>
             <div class="stock-status">状态: 已收盘</div>
         </div>
         
         <div class="stock-card">
             <div class="stock-name">GOOGL</div>
             <div class="stock-price">154.64</div>
-            <div class="stock-change">涨跌幅: 0.31%</div>
+            <div class="stock-change">涨跌幅: 0.2%</div>
+            <div class="stock-position">
+                <div>持股数量: 60</div>
+                <div>持仓金额: 9278.40</div>
+                <div>持仓占比: 6.2%</div>
+            </div>
             <div class="stock-status">状态: 已收盘</div>
         </div>
         

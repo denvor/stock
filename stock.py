@@ -8,11 +8,23 @@ import time
 
 def main():
     try:
-        # 港股代码
+        # 港股代码和持股数量保持不变
         hk_codes = ["hk00700", "hk09988", "hk03690"]
+        hk_shares = {
+            "hk00700": 100, 
+            "hk09988": 200,
+            "hk03690": 150
+        }
         
-        # 美股代码 (从产品要求美股.txt读取)
+        # 美股代码和持股数量保持不变
         us_codes = ["AAPL", "MSFT", "GOOGL"]
+        us_shares = {
+            "AAPL": 50,
+            "MSFT": 75,
+            "GOOGL": 60
+        }
+        
+        #
         
         # 修改这里 - 不再需要传递API Key
         hk_data = HKStockData()
@@ -71,6 +83,22 @@ def main():
         env = Environment(loader=FileSystemLoader('templates'))
         template = env.get_template('stock_report.html')
 
+        # 计算港股持仓金额和总市值
+        hk_total_value = 0
+        for code, info in stock_data.items():
+            if code in hk_shares:
+                info['position_value'] = float(info['price']) * hk_shares[code]
+                hk_total_value += info['position_value']
+        
+        # 计算美股持仓金额和总市值
+        us_total_value = 0
+        for code, info in us_stock_data.items():
+            if code in us_shares:
+                info['position_value'] = float(info['price']) * us_shares[code]
+                us_total_value += info['position_value']
+        
+        total_portfolio_value = hk_total_value + us_total_value
+
         # 准备模板数据
         template_data = {
             'hk_stocks': [
@@ -79,7 +107,10 @@ def main():
                     'name': info['name'],
                     'price': info['price'],
                     'change_percent': info['change_percent'],
-                    'status': info['status']
+                    'status': info['status'],
+                    'shares': hk_shares.get(code, 0),
+                    'position_value': round(info.get('position_value', 0), 2),
+                    'position_percent': round(info.get('position_value', 0)/total_portfolio_value*100, 2) if total_portfolio_value > 0 else 0
                 }
                 for code, info in stock_data.items()
             ],
@@ -88,10 +119,16 @@ def main():
                     'symbol': code,
                     'price': info['price'],
                     'change_percent': info['change_percent'],
-                    'status': info['status']
+                    'status': info['status'],
+                    'shares': us_shares.get(code, 0),
+                    'position_value': round(info.get('position_value', 0), 2),
+                    'position_percent': round(info.get('position_value', 0)/total_portfolio_value*100, 2) if total_portfolio_value > 0 else 0
                 }
                 for code, info in us_stock_data.items()
-            ]
+            ],
+            'hk_total_value': round(hk_total_value, 2),
+            'us_total_value': round(us_total_value, 2),
+            'total_portfolio_value': round(total_portfolio_value, 2)
         }
 
         # 渲染模板并保存到文件
